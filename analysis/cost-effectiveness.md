@@ -96,6 +96,28 @@ This creates an important trade-off:
 > **How much defensive value does a control provide relative to the
 > cost and complexity required to deploy it?**
 
+### Distribution of Controls by Implementation Cost
+
+The 26 proposed security controls were also compared by responsible
+environment and estimated implementation effort.
+
+![Security Controls by Owner and Implementation Cost](../assets/diagrams/security-controls-owner-cost.png)
+
+The distribution shows that implementation effort overlaps across the
+two sides of the boundary. Both lab-side and victim-side environments
+include controls across small, medium, and large implementation bands.
+
+This supports an important observation from the broader analysis:
+**cost alone does not explain the containment gap.**
+
+The more significant distinction is **when a control can intervene in
+the attack chain**. Lab-side controls can act before the victim window
+opens, whereas victim-side controls generally operate after exposure
+has already occurred.
+
+> **Visualization:** Created from the 26-control project matrix used in
+> the team research analysis.
+
 ---
 
 ## My Contribution
