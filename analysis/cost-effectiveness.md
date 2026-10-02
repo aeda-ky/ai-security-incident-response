@@ -43,6 +43,40 @@ The analysis considered several dimensions:
 | Attack-Chain Position | Stage at which the control can intervene |
 
 ---
+## Cost, Timing & Intervention Analysis
+
+The figure below visualizes when the proposed security controls can first
+intervene and how their implementation effort is distributed across the
+attack timeline.
+
+![Control Timing and Cost Analysis](../assets/diagrams/control-timing-cost.png)
+
+The analysis highlights a key finding of the broader project:
+**timing, rather than cost alone, separates the two sides of the boundary.**
+
+Lab-side controls can intervene before the victim window opens, while
+victim-side controls operate after potentially malicious activity has
+already reached the downstream environment.
+
+### How to Read the Figure
+
+- **Green** — OpenAI / lab-side controls
+- **Brown** — External sandbox operator
+- **Red** — Hugging Face / victim-side controls
+- **Circle** — Block
+- **Triangle** — Detect
+- **Square** — Reduce
+- **Hollow marker** — Approximate timing
+
+Implementation effort is grouped into:
+
+- **S** — < 3 days
+- **M** — 3–10 days
+- **L** — 10–30 days
+
+> **Figure source:** Team research project, *The Containment Burden Sits on the Wrong Side of the Boundary & AI Escape Detection Harness*, Apart Research.
+
+---
 
 ## Cost vs. Defensive Value
 
