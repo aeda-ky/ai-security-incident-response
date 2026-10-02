@@ -1,81 +1,119 @@
-#  AI/ML Incident Response & Security Control Analysis
+# AI/ML Incident Response & Security Control Analysis
 
-> An AI security case study focused on identifying where attacks against AI/ML infrastructure can be detected, contained, and interrupted across the attack chain.
+> An AI security case study examining where attacks against AI/ML
+> infrastructure can be detected, interrupted, and contained across
+> the attack chain.
 
-##  About Project 
+## Project Overview
 
-This project was developed as part of an AI Incident Response Sprint and focuses on analyzing a real-world AI/ML security incident from an incident response perspective.
+This repository presents my analysis and contribution to the team research
+project:
 
-The study examines the attack chain from both **lab-side** and **victim-side** perspectives and evaluates security controls that could help detect, contain, or prevent different stages of the attack.
+**The Containment Burden Sits on the Wrong Side of the Boundary &
+AI Escape Detection Harness**
 
-### Focus Areas
+The project investigates a real-world AI/ML security incident from an
+incident-response perspective, focusing on how defensive controls can
+detect, interrupt, or contain malicious activity at different stages of
+the attack chain.
 
-- AI/ML Security
-- Incident Response
-- Attack Chain Analysis
-- Detection & Containment
-- Security Control Analysis
-- Cost–Effectiveness Evaluation
-
----
-
-## 🔗Attack Chain Analysis
-
-The incident was analyzed step by step to identify critical points where defensive controls could interrupt the attack chain.
-
-The analysis considers:
-
-+ Initial attack stages
-- Detection opportunities
-- Containment points
-- Lateral movement prevention
-- Defensive controls on both sides of the environment
-
-*A detailed attack-chain analysis will be added to the repository.*
+The broader research includes an incident reconstruction, a **26-control
+Kill-Point Matrix**, containment analysis, and a detection proof of concept.
 
 ---
 
-##  Security Control Analysis
+## Research Question
 
-Potential security controls were evaluated according to their role in:
+> Where should containment responsibility sit when potentially malicious
+> AI/ML activity crosses the boundary between a lab environment and a
+> downstream victim environment?
 
-- Detecting malicious activity
-- Limiting attacker movement
-- Reducing containment workload
-- Preventing further compromise
-- Improving visibility across AI/ML infrastructure
-
-Controls were considered separately for **lab-side** and **victim-side** environments.
+The analysis considers not only **which security controls are available**,
+but also **when they can intervene**, **what defensive effect they provide**,
+and **how much implementation effort they require**.
 
 ---
 
-## Cost & Effectiveness Analysis
+## Analysis
 
-Security controls were compared based on factors such as:
+### 1. Attack Chain Analysis
 
-| Evaluation Factor | Description |
-|---|---|
-| Implementation Cost | Estimated complexity and resources required |
-| Security Effectiveness | Expected defensive impact |
-| Attack Stage Coverage | Where the control acts in the attack chain |
-| Detection Capability | Ability to identify suspicious activity |
-| Containment Capability | Ability to limit the impact of compromise |
+Reconstruction of the attack sequence and identification of potential
+detection and containment opportunities.
+
+➡️ [View Attack Chain Analysis](analysis/attack-chain.md)
+
+### 2. Security Control Analysis
+
+Analysis of **26 proposed security controls** across lab-side,
+external-sandbox, and victim-side environments.
+
+Controls are evaluated according to their primary defensive effect:
+
+**Block • Detect • Reduce**
+
+➡️ [View Security Control Analysis](analysis/security-controls.md)
+
+### 3. Cost, Timing & Effectiveness
+
+Comparison of defensive controls based on:
+
+- implementation effort,
+- intervention timing,
+- defensive effect,
+- attack-chain position,
+- and containment value.
+
+➡️ [View Cost & Effectiveness Analysis](analysis/cost-effectiveness.md)
 
 ---
 
-##  My Contribution
+## Key Visualization
 
-My primary focus within the project was the **cost and effectiveness analysis of proposed security controls**.
+![Control Timing and Cost Analysis](assets/diagrams/control-timing-cost.png)
 
-I evaluated defensive measures for both lab-side and victim-side environments, considering their implementation requirements, expected security impact, and their potential role in detecting or containing different stages of the attack.
+A central observation of the broader analysis is that implementation
+cost alone does not explain the difference between the two sides of the
+boundary.
 
-This work helped connect technical security recommendations with practical considerations such as **cost, deployment complexity, and defensive value**.
+**Intervention timing is critical.**
+
+Controls positioned earlier in the attack chain can potentially interrupt
+malicious activity before the containment burden reaches the downstream
+environment.
 
 ---
 
-## Key Concepts
+## My Contribution
 
-`AI Security` `Incident Response` `Risk Analysis` `Detection` `Containment` `Attack Chain` `Security Controls`
+My primary contribution to the team project focused on the
+**cost and effectiveness analysis of proposed security controls**.
+
+I evaluated controls across lab-side and victim-side environments,
+considering factors such as:
+
+- implementation effort,
+- operational complexity,
+- defensive effectiveness,
+- intervention timing,
+- attack-chain coverage,
+- and containment value.
+
+This work contributed to the project's broader **Kill-Point Matrix** and
+the analysis of how containment responsibilities are distributed across
+the AI/ML security boundary.
+
+This repository is a **personal portfolio representation of my analysis
+and contribution** to the broader team research project. The complete
+research and technical implementation were collaborative efforts.
+
+---
+
+## Security Concepts
+
+`AI Security` `Incident Response` `Attack Chain Analysis`
+`Detection Engineering` `Containment` `Security Controls`
+`Risk Analysis` `Kill-Point Analysis`
 
 ---
 
@@ -84,19 +122,42 @@ This work helped connect technical security recommendations with practical consi
     ai-security-incident-response/
     │
     ├── README.md
+    │
     ├── analysis/
     │   ├── attack-chain.md
     │   ├── security-controls.md
     │   └── cost-effectiveness.md
     │
-    ├── assets/
-    │   └── diagrams/
-    │
-    └── docs/
-        └── incident-analysis.pdf
+    └── assets/
+        └── diagrams/
+            ├── control-timing-cost.png
+            ├── security-controls-owner-cost.png
+            └── security-controls-owner-effect.png
 
 ---
 
-## Project Status
+## Broader Team Research
 
-Documentation and visualizations are currently being organized for public release.
+This repository focuses on my analytical contribution and portfolio
+documentation.
+
+For the complete team research, incident reconstruction, Kill-Point Matrix,
+and detection proof of concept, see the original project resources:
+
+- **Apart Research Publication:**  
+  [The Containment Burden Sits on the Wrong Side of the Boundary &
+  AI Escape Detection Harness](https://apartresearch.com/project/the-containment-burden-sits-on-the-wrong-side-of-the-boundary-ai-escape-detection-harness-7luf)
+
+- **Original Detection Harness Repository:**  
+  [AI Escape Detection PoC](https://github.com/V3nG4mxV1p3r/ai-escape-detection-poc)
+
+---
+
+##  Collaboration & Attribution
+
+The original research was developed collaboratively as part of an
+AI Incident Response Sprint.
+
+This repository does **not** represent the entire team project as individual
+work. It documents my contribution and presents selected analyses from the
+broader collaborative research for portfolio purposes.
